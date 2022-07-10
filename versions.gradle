@@ -17,17 +17,23 @@ ext.build_versions = build_versions
 
 /* Android System Libraries */
 def system_lib_versions = [:]
+system_lib_versions.rx_java_version = '3.0.10'
+system_lib_versions.rx_kotlin_version = '3.0.1'
+system_lib_versions.rx_android_version = '3.0.0'
 system_lib_versions.core_ktx_version = '1.7.0'
+system_lib_versions.activity_ktx_version = '1.4.0'
 system_lib_versions.app_compat_version = '1.4.2'
 system_lib_versions.constraintlayout_version = '2.1.4'
 system_lib_versions.material_version = '1.6.1'
 system_lib_versions.recyclerview_version = '1.2.1'
-system_lib_versions.coroutines_version  = "1.3.9"
+system_lib_versions.coroutines_version  = '1.3.9'
+system_lib_versions.lifecycle_version  = '2.4.0'
 ext.system_lib_versions = system_lib_versions
 
 /* Other Android Libraries */
 def lib_versions = [:]
-lib_versions.retrofit_version  = "2.9.0"
+lib_versions.retrofit_version  = '2.9.0'
 lib_versions.timber_version = '5.0.1'
 lib_versions.okhttp3_interceptor_version = '4.9.1'
+lib_versions.glide_version = '4.12.0'
 ext.lib_versions = lib_versions

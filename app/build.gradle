@@ -7,11 +7,14 @@ android {
     compileSdk build_versions.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.practice.testapplication"
+        applicationId "com.practice.weatherapplication"
         minSdk build_versions.minSdkVersion
         targetSdk build_versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", "\"" + getBaseUrl() + "\""
+        buildConfigField "String", "APP_ID", "\"" + getAppId() + "\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +32,7 @@ android {
     kotlinOptions {
         jvmTarget = build_versions.jvm_target
     }
+    viewBinding.enabled = true
 }
 
 dependencies {
@@ -38,9 +42,15 @@ dependencies {
     implementation "com.google.android.material:material:$system_lib_versions.material_version"
     implementation "androidx.constraintlayout:constraintlayout:$system_lib_versions.constraintlayout_version"
 
-    //coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$system_lib_versions.coroutines_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$system_lib_versions.coroutines_version"
+    //Rx Java
+    implementation "io.reactivex.rxjava3:rxjava:$system_lib_versions.rx_java_version"
+    //Rx Kotlin
+    implementation "io.reactivex.rxjava3:rxkotlin:$system_lib_versions.rx_kotlin_version"
+    //Rx Android
+    implementation "io.reactivex.rxjava3:rxandroid:$system_lib_versions.rx_android_version"
+    //Extension
+    implementation "androidx.activity:activity-ktx:$system_lib_versions.activity_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$system_lib_versions.activity_ktx_version"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$lib_versions.retrofit_version"
@@ -51,6 +61,13 @@ dependencies {
     //Timber
     implementation "com.jakewharton.timber:timber:$lib_versions.timber_version"
 
+    // ViewModel
+    implementation  "androidx.lifecycle:lifecycle-viewmodel-ktx:$system_lib_versions.lifecycle_version"
+    // LiveData
+    implementation  "androidx.lifecycle:lifecycle-livedata-ktx:$system_lib_versions.lifecycle_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$lib_versions.glide_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
